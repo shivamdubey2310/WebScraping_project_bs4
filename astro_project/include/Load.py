@@ -9,17 +9,6 @@ import time
 # Loading .env variables
 load_dotenv()
 
-# Customizing logging.basicConfig() to format logging 
-logging.basicConfig(
-    level = logging.DEBUG,
-    filename = "ETL_log.log",
-    encoding = "utf-8",
-    filemode = "a",
-    format="{asctime} - {levelname} - {message}",
-    style="{",
-    datefmt="%Y-%m-%d %H:%M",
-)
-
 
 def creating_schema():
     """
@@ -69,7 +58,7 @@ def creating_schema():
         """
     ]
 
-    time.sleep(2)
+    time.sleep(2)  # Delay for db to fetch the newly created database
     try:
         engine_for_tables = sal.create_engine(f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}")
         
@@ -84,7 +73,7 @@ def creating_schema():
         logging.info(f"Tables created successfully")
 
 
-def load():
+def load_data():
     """A Function to load data into tables """
 
     db_user = os.getenv("DB_USER")
@@ -102,7 +91,7 @@ def load():
             
             tables = ["jobs", "job_type"]
             for table in tables:
-                file_name = f"CSVs/{table}.csv"
+                file_name = f"include/CSVs/{table}.csv"
                 df = pd.read_csv(file_name)
                 df.to_sql(table, conn, if_exists="replace", index=False)
 
@@ -112,5 +101,23 @@ def load():
     else:
         logging.info(f"Tables loaded successfully")
 
-creating_schema()
-load()
+# ------------------------------------------------------------------------
+
+# Main loading function 
+def Loading():
+    # Loading .env variables
+    load_dotenv()
+
+    # Customizing logging.basicConfig() to format logging 
+    logging.basicConfig(
+        level = logging.DEBUG,
+        filename = "ETL_log.log",
+        encoding = "utf-8",
+        filemode = "a",
+        format="{asctime} - {levelname} - {message}",
+        style="{",
+        datefmt="%Y-%m-%d %H:%M",
+    )
+
+    creating_schema()
+    load_data()

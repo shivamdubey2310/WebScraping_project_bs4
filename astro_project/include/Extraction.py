@@ -6,18 +6,6 @@ import pandas as pd
 import logging
 import os
 
-# Customizing logging.basicConfig() to format logging 
-logging.basicConfig(
-    level = logging.DEBUG,
-    filename = "ETL_log.log",
-    encoding = "utf-8",
-    filemode = "a",
-    format="{asctime} - {levelname} - {message}",
-    style="{",
-    datefmt="%Y-%m-%d %H:%M",
-)
-
-
 def searchingData(divIdContent, pgNo):
     """
     Search for relevant data in the provided div content.
@@ -75,9 +63,9 @@ def searchingData(divIdContent, pgNo):
     
     try:
         # Trying to create a directory and if it exists do nothing (nothing means - don't raise fileExistsException)
-        os.makedirs("CSVs", exist_ok=True)
+        os.makedirs("include/CSVs", exist_ok=True)
     
-        file_name = f"CSVs/pg{pgNo}.csv"
+        file_name = f"include/CSVs/pg{pgNo}.csv"
         data_frame.to_csv(file_name, index=False)
     
     except Exception as e:
@@ -152,4 +140,19 @@ def data_extraction(URL="https://www.python.org/jobs/", pgNo=1):
     
     searchingData(divIdContent, pgNo)
 
-# data_extraction(URL="https://www.python.org/jobs/?page=1", pgNo=1)
+# --------------------------------------------------------------------------------------------
+# Main extraction function
+def Extraction(): 
+    
+    # Customizing logging.basicConfig() to format logging 
+    logging.basicConfig(
+        level = logging.DEBUG,
+        filename = "ETL_log.log",
+        encoding = "utf-8",
+        filemode = "a",
+        format="{asctime} - {levelname} - {message}",
+        style="{",
+        datefmt="%Y-%m-%d %H:%M",
+    )
+
+    data_extraction(URL="https://www.python.org/jobs/?page=1", pgNo=1)
