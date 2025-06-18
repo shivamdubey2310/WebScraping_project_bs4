@@ -1,0 +1,7 @@
+pandas
+sqlalchemy
+requests
+bs4
+airflow
+dotenv
+psycopg2-binary

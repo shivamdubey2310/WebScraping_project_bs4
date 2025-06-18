@@ -1,0 +1,89 @@
+job_id,job_type
+1,Back end
+1,Database
+2,Back end
+2,Operations
+2,Systems
+3,Systems
+4,Back end
+4,Machine Learning
+4,Systems
+5,Back end
+5,Cloud
+5,Database
+5,Web
+6,Back end
+6,Cloud
+6,Front end
+6,Integration
+6,Machine Learning
+7,Back end
+7,Front end
+8,Image Processing
+8,Machine Learning
+8,Systems
+9,Back end
+9,Cloud
+9,Integration
+9,Machine Learning
+9,Operations
+9,Systems
+10,Back end
+10,Cloud
+10,Database
+10,Management
+11,Back end
+11,Big Data
+11,Cloud
+11,Integration
+11,Lead
+11,Machine Learning
+11,Management
+11,Operations
+11,Systems
+12,Machine Learning
+13,Machine Learning
+14,Back end
+14,Cloud
+14,Front end
+14,Web
+15,Back end
+15,Database
+15,Integration
+15,Machine Learning
+15,Web
+16,Back end
+16,Lead
+17,Back end
+17,Big Data
+17,Integration
+17,Numeric processing
+17,Testing
+17,Web
+18,Back end
+19,Back end
+19,Machine Learning
+20,Back end
+20,Operations
+20,Systems
+21,Back end
+21,Cloud
+21,Machine Learning
+22,Back end
+22,Lead
+22,Web
+23,Back end
+23,Big Data
+23,Database
+23,Systems
+23,Text Processing
+24,Back end
+24,Big Data
+24,Cloud
+24,Integration
+24,Web
+25,Image Processing
+25,Machine Learning
+25,Systems
+25,Web
+26,Back end
