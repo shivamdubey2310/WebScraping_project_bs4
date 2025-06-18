@@ -20,7 +20,7 @@ def creating_schema():
     db_pass = os.getenv("DB_PASS")
     db_port = os.getenv("DB_PORT")
     db_name = os.getenv("DB_NAME")
-    
+
     try:
         # isolation_level='AUTOCOMMIT' is required to run CREATE DATABASE
         engine_for_db = sal.create_engine(f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}:{db_port}/postgres", isolation_level='AUTOCOMMIT')

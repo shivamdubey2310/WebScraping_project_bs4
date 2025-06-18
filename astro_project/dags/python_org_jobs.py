@@ -13,7 +13,7 @@ with DAG(
     description = "ETL from python.org/jobs",
     tags = ["ETL", "Web Scraping", "bs4"],
     start_date = datetime.datetime(2025, 1, 1),
-    schedule_interval = "@daily",
+    schedule = "@daily",
     catchup = False
 ) as dag:
     
