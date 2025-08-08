@@ -4,7 +4,7 @@ A comprehensive ETL (Extract, Transform, Load) pipeline built with Apache Airflo
 
 ---
 
-[!Diagram](https://github.com/shivamdubey2310/WebScraping_project_bs4/blob/main/bs4.drawio.png)
+![Diagram](https://github.com/shivamdubey2310/WebScraping_project_bs4/blob/main/bs4.drawio.png)
 
 ---
 
